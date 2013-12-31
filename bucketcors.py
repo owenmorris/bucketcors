@@ -66,6 +66,8 @@ if __name__ == '__main__':
         index.key = 'index.html'
         index.set_contents_from_filename('index.html')
         index.set_acl('public-read')
+    else:
+        index = buckettoenable.get_key('index.html')
     
     indexurl = index.generate_url(expires_in=0, query_auth=False, force_http=True)
     print 'Launching site: %s' %(indexurl)
