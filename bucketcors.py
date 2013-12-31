@@ -61,10 +61,12 @@ if __name__ == '__main__':
     buckettoenable.configure_website(suffix='index.html')
      
     print 'Uploading index file'
-    index = boto.s3.key.Key(buckettoenable)
-    index.key = 'index.html'
-    index.set_contents_from_filename('index.html')
-    index.set_acl('public-read')
+    if not buckettoenable.get_key('index.html'):
+        index = boto.s3.key.Key(buckettoenable)
+        index.key = 'index.html'
+        index.set_contents_from_filename('index.html')
+        index.set_acl('public-read')
+    
     indexurl = index.generate_url(expires_in=0, query_auth=False, force_http=True)
     print 'Launching site: %s' %(indexurl)
     webbrowser.open(indexurl, 1)
