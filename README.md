@@ -17,6 +17,13 @@ Change to the directory where you downloaded this software.
 Running the software
 ====================
 
+Create a file called .boto in your home directory with contents as below:
+
+
+	[Credentials]
+	aws_access_key_id = <your key here>
+	aws_secret_access_key = <your secret key here>
+
 Run it with python - from the console:
     
     python bucketcors.py
