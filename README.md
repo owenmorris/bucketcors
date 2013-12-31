@@ -1,3 +1,11 @@
+bucketcors.py
+============
+
+This program creates a new S3 bucket for a domain (or updates an existing one) so 
+it can act as a website and so that Fargo can write to it via CORS requests.
+
+It is licensed via the GPL. 
+
 Installation
 ============
 
