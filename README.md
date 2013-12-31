@@ -21,6 +21,7 @@ Change to the directory where you downloaded this software.
 
     virtualenv bucketcors 
     cd bucketcors 
+    source ./bin/activate
     pip install -r requirements.txt
 
 Running the software
