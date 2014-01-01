@@ -60,13 +60,14 @@ if __name__ == '__main__':
     print "Configuring bucket %s as website" % (buckettoenable.name)
     buckettoenable.configure_website(suffix='index.html')
      
-    print 'Uploading index file'
     if not buckettoenable.get_key('index.html'):
+    	print 'Uploading index file'
         index = boto.s3.key.Key(buckettoenable)
         index.key = 'index.html'
         index.set_contents_from_filename('index.html')
         index.set_acl('public-read')
     else:
+	print 'Bucket already has index file, skipping upload'
         index = buckettoenable.get_key('index.html')
     
     indexurl = index.generate_url(expires_in=0, query_auth=False, force_http=True)
