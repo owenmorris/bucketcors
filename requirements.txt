@@ -1,2 +1,6 @@
+altgraph==0.10.2
 boto==2.21.2
+macholib==1.5.1
+modulegraph==0.10.4
+py2app==0.7.3
 wsgiref==0.1.2
